@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #Programa simples para calculos de operacoes basicas para conhecer um pouco mais do shell
+
+#Funcao para, baseado na operacao deseajda, retornar a resposta da operacao
 function testarOperacoes {
 	if [[ ${RESP} != "" ]]
 	then
@@ -28,7 +30,7 @@ function testarOperacoes {
 			;;
 	esac
 }
-
+#Funcao para receber os valores e a operacao
 function fluxoSemArgumentos {
 	read -p "Qual o primeiro valor? " VALOR1
 	read -p "Qual o segundo valor? " VALOR2
@@ -40,16 +42,18 @@ function fluxoSemArgumentos {
 	3 - Divisao 
 	OPCAO :    " OPERACAO
 }
-
+#Fluxo inicial
 VALOR1=$1
 OPERACAO=$2
 VALOR2=$3
 
 RESULT=""
 AGAIN=true
+#Rodar enquanto o usuario quiser
 while [[ ${AGAIN} = true ]]  
 do
 	ERRO=true
+	#Rodar enquanto tiver algum erro ( operacao invalida )
 	while [[ ${ERRO} = true ]] 
 	do
 		ERRO=false
@@ -68,10 +72,14 @@ do
 			ERRO=true
 			echo "Operacao Invalida"
 		fi	
+		
+		#Se nao tiver a pasta resultados criada cria-la
 		if [[ ! -d "resultados" ]] && [[ ${ERRO} = false ]]
 		then
 			mkdir resultados
 		fi
+		
+		#Criar um arquivo com o historico das respostas
 		cd resultados
 		echo -e "${RESP}\n" >> resultados.txt
 	done	
