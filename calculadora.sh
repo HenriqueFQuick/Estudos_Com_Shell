@@ -91,4 +91,4 @@ do
 	fi
 	cd ..
 done
-echo "Obrigado por usar nosso programa :)"
+echo "Obrigado por usar a calculadora :)"
