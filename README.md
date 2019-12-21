@@ -11,3 +11,6 @@ funcionamento:
              ./calculadora.sh
         
 Obs: se decidir passar a operacao como parametro, para passar o sinal de multiplicação. é necessário passar como "\*"
+
+
+TODO -> opcao de deletar historico de uso
