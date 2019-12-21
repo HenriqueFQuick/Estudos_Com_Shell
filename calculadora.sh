@@ -92,3 +92,4 @@ do
 	cd ..
 done
 echo "Obrigado por usar a calculadora :)"
+echo "Para ver o historico de uso de hoje e das vezes anteriores va ate a pasta resultados."
